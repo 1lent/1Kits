@@ -1,0 +1,4 @@
+name: 1Kits
+version: '1.0'
+main: com.lent.Kits.Main
+api-version: '1.20'
