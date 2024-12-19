@@ -1,6 +1,5 @@
-package com.lent.Kits.kit.type;
+package com.lent.Kits.kit;
 
-import com.lent.Kits.kit.KitType;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -13,14 +12,16 @@ import java.util.Arrays;
 public class KitGUI {
 
     public KitGUI(Player player) {
-        Inventory gui = Bukkit.createInventory(null, 54, ChatColor.GRAY + "Kit Selector");
+        Inventory gui = Bukkit.createInventory(null, 9, ChatColor.GRAY + "Kit Selector");
 
         for (KitType type : KitType.values()) {
+
             ItemStack is = new ItemStack(type.getMaterial());
             ItemMeta isMeta = is.getItemMeta();
             isMeta.setDisplayName(type.getDisplay());
             isMeta.setLore(Arrays.asList(type.getDescription()));
             isMeta.setLocalizedName(type.name());
+            is.setItemMeta(isMeta);
 
             gui.addItem(is);
         }
